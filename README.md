@@ -48,7 +48,7 @@ The player probably works with most other modern devices/browsers. If you have s
  Setup
 ----------
 
-The dependent components for Web4Radio are hosted by the free [jsDelivr](http://www.jsdelivr.com/) [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). The only file that needs to be uploaded to your web server is a modified copy of the `player.html` file. 
+The dependent components for Web4Radio are hosted by the free [jsDelivr](http://www.jsdelivr.com/) [CDN](https://en.wikipedia.org/wiki/Content_delivery_network). The only file that needs to be uploaded to your web server is a modified copy of the `player.html` file. The CDN is used for for those who cannot upload their own non-HTML content. If you do not trust the CDN, you should host the dependencies yourself, and modify the player code accordingly.
 
 1. Download a copy of this repository as a zip using the download button at the top of the Web4Radio repository page.
 2. Extract player.html from the zip
@@ -59,15 +59,24 @@ The dependent components for Web4Radio are hosted by the free [jsDelivr](http://
  - `streamPort` - The server's [port number](https://en.wikipedia.org/wiki/Uniform_resource_locator#Syntax)
  - `mp3Mount` - The name of the Iceast MP3 mount, without `/`s. If not applicable, (e.g. for SHOUTcast streams), leave as empty quotes `""`
  - `oggMount` - The name of the Iceast OGG mount, without `/`s. If not applicable, (e.g. for SHOUTcast streams), leave as empty quotes `""`
+ - `autoPlay` - Sets automatic playback
  - `stationId` - If you are a [StreamLicensing.com](http://streamlicensing.com/) customer, enter your station ID number here to display the currently playing track in the player; all others should leave this set to empty quotes. [Later versions](https://github.com/seanthegeek/Web4Radio/issues/3) of the player will provide now playing metadata for all users. To locate your station ID, log into the  [StreamLicensing.com client area](http://streamlicensing.com/), and edit your station, the URL in the address bar will then contain `id=` where the following number is the station ID.
 
-4. Save the modified player.html file, and upload it to your web server
+4. Save the modified player.html file, and upload it to your web server. The player code must be in a separate file/page, even if you plan to embed it in an existing page.
 
 5. The player can then be launched in a popup from a link like this:
 
-```<a onclick="window.open('http://www.streamlicensing.com/stations/radiothermo/player.html', 'player', 'menubar=no,location=yes,resizable=yes,scrollbars=no,status=no, width=300, height=200');">Launch universal player</a>```
+```<a onclick="window.open('http://www.streamlicensing.com/stations/radiothermo/player.html', 'player', 'menubar=no,location=yes,resizable=yes,scrollbars=no,status=no, width=300, height=200');">Launch radio player</a>```
 
-*Note*: It is best to use an absolute URL; some versions of IE don't like relative URLs in `window.open()`. 
+Or, it can be embedded in an existing page as an `iframe` like this one:
+
+```<iframe src=http://www.streamlicensing.com/stations/radiothermo/player.html" width="300" height="300" scrolling="no" frameborder="0">```
+
+When using an embedded player, consider turning off auto play. Unsolicited sound may annoy visitors.  
+
+Replace the URLS in the above examples so that it points the page you uploaded on your site. It is best to use absolute URLs; some versions of IE don't like relative URLs.
+
+The height may need to be adjusted if you do not show the song information, or need to show longer song information.
 
 Known issues
 -------------------
@@ -105,4 +114,3 @@ Donations
 --------------
 
 If Web4Radio has helped you increase your revenue, please consider [donating to the jPlayer project](http://jplayer.org). Without the hard work of the jPlayer team, Web4Radio would not exist.
-
