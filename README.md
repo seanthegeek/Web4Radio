@@ -74,7 +74,7 @@ Or, it can be embedded in an existing page as an `iframe` like this one:
 
 When using an embedded player, consider turning off auto play. Unsolicited sound may annoy visitors.  
 
-Replace the URLS in the above examples so that it points the page you uploaded on your site. It is best to use absolute URLs; some versions of IE don't like relative URLs.
+Replace the URLs in the above examples so that it points the page you uploaded on your site. It is best to use absolute URLs; some versions of IE don't like relative URLs.
 
 The height may need to be adjusted if you do not show the song information, or need to show longer song information.
 
