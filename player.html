@@ -34,12 +34,11 @@
         "use strict";
         // Start Web4Radio options
         var streamName = ""; // Station name
-        var streamAddress = "stream.radiothermo.com"; // Streaming server address
+        var streamAddress = ""; // Streaming server address
         var streamPort  = 80; // Streaming server port
         var mp3Mount = ""; // Leave empty if shoutcast; no /
         var oggMount = ""; // Leave empty if you don't have an ogg stream; no /
         var autoPlay = true; // Automatic play - true of false - does not work for Android browsers
-        var stationId = "990"; // StreamLicensing.com station ID (sid), if applicable, "" if not
         // End Web4radio options
     </script>
 </head>
@@ -82,16 +81,6 @@
 
     <script src="//cdn.jsdelivr.net/jquery/1.9.1/jquery-1.9.1.min.js"></script>
     <script src="//cdn.jsdelivr.net/jplayer/2.4.0/jquery.jplayer.min.js"></script>
-
-    <script>
-        "use strict";
-        if (stationId != "")
-        {
-            document.writeln("<script src='//www.streamlicensing.com/directory/index.cgi?action=snippet_code'><\/script>");
-            document.writeln("<script src='//www.streamlicensing.com/directory/index.cgi?action=snippet&sid=" + stationId + "'><\/script>");
-        }
-    </script>
-
     <script>
         "use strict";
         $(document).ready(function(){
